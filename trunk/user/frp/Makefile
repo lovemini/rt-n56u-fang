@@ -1,5 +1,5 @@
 THISDIR := $(shell pwd)
-FRP_VER := 0.29.0
+FRP_VER := 0.54.0
 FRP_URL_BASE := https://github.com/fatedier/frp/releases/download
 
 FRP_NAME := frp_$(FRP_VER)_linux_mipsle
@@ -10,7 +10,7 @@ all: download_test extra_test
 
 download_test:
 	( if [ ! -f $(FRP_NAME).tar.gz ]; then \
-		wget -t5 --timeout=20 --no-check-certificate -O $(FRP_NAME).tar.gz $(FRP_URL); \
+		wget -t5 --timeout=50 --no-check-certificate -O $(FRP_NAME).tar.gz $(FRP_URL); \
 	fi )
 
 extra_test:
